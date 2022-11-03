@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular média</title>
+</head>
+<body>
+    <p>Nota 1: <input id="n1" type="text"></p>
+    <p>Nota 2: <input id="n2" type="text"></p>
+    <p>Nota 3: <input id="n3" type="text"></p>
+    <button id="calcularMedia" type="submit" onclick="pegarCalcularNotas()">Calcular</button> <br><br>
+    Resultado: 
+    <div id="resultado"></div>
+
+    <script type="text/javascript">
+        
+        function pegarCalcularNotas() {
+            var n1 = parseFloat(document.getElementById('n1').value);            
+            var n2 = parseFloat(document.getElementById('n2').value);
+            var n3 = parseFloat(document.getElementById('n3').value);
+
+            var media = ((n1 + n2 + n3) / 3); 
+            
+            if (media >= 7) {
+                document.getElementById('resultado').textContent = 'Aprovado, sua média foi: ' + media.toFixed(1);                
+            } else {
+                document.getElementById('resultado').textContent = 'Reprovado, sua média foi: ' + media.toFixed(1);                
+            }
+        }             
+    </script>
+</body>
+</html>
